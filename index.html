@@ -1,1 +1,1358 @@
-https://calm-lamington-b22639.netlify.app
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinanzasLibres España · Tu guía para ahorrar e invertir</title>
+<meta name="description" content="Aprende a ahorrar, invertir y ganar dinero en España. Trucos reales de finanzas personales para 2026.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4M768F04G6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4M768F04G6');
+</script>
+<style>
+  /* ─── RESET & BASE ─────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --verde:    #00C896;
+    --verde2:   #00A878;
+    --oscuro:   #0D1117;
+    --gris1:    #161B22;
+    --gris2:    #21262D;
+    --gris3:    #30363D;
+    --texto:    #E6EDF3;
+    --subtexto: #8B949E;
+    --amarillo: #F7C948;
+    --rosa:     #FF6B9D;
+    --azul:     #58A6FF;
+    --radio:    14px;
+    --sombra:   0 4px 24px rgba(0,0,0,.5);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--oscuro);
+    color: var(--texto);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── PARTÍCULAS DE FONDO ──────────────────────────── */
+  #particles { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .particle {
+    position: absolute;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: var(--verde);
+    opacity: 0;
+    animation: floatParticle linear infinite;
+  }
+
+  @keyframes floatParticle {
+    0%   { opacity: 0; transform: translateY(100vh) scale(0); }
+    10%  { opacity: .4; }
+    90%  { opacity: .2; }
+    100% { opacity: 0; transform: translateY(-10vh) scale(1.5); }
+  }
+
+  /* ─── BARRA DE NAVEGACIÓN ──────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(16px, 4vw, 48px);
+    height: 64px;
+    background: rgba(13,17,23,.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--gris3);
+    animation: slideDown .6s ease both;
+  }
+  @keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+  }
+  .nav-logo {
+    font-size: 1.25rem; font-weight: 800;
+    background: linear-gradient(135deg, var(--verde), var(--azul));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    letter-spacing: -.5px;
+  }
+  .nav-links { display: flex; gap: 8px; align-items: center; }
+  .nav-links a {
+    padding: 8px 16px; border-radius: 100px;
+    font-size: .85rem; font-weight: 600;
+    transition: background .2s, color .2s;
+    color: var(--subtexto);
+  }
+  .nav-links a:hover { background: var(--gris2); color: var(--texto); }
+  .nav-cta {
+    background: var(--verde) !important; color: var(--oscuro) !important;
+    font-weight: 700 !important; padding: 8px 20px !important;
+    transition: transform .15s, box-shadow .15s !important;
+    box-shadow: 0 0 0 rgba(0,200,150,0);
+  }
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,200,150,.4) !important;
+  }
+
+  /* ─── HERO ─────────────────────────────────────────── */
+  .hero {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 96px clamp(16px,6vw,80px) 64px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,200,150,.1); border: 1px solid rgba(0,200,150,.3);
+    border-radius: 100px; padding: 6px 16px;
+    font-size: .8rem; font-weight: 700; color: var(--verde);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 24px;
+    animation: fadeUp .7s .2s both;
+  }
+  .hero-badge span { width: 8px; height: 8px; border-radius: 50%; background: var(--verde); animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 900; line-height: 1.1;
+    letter-spacing: -2px;
+    animation: fadeUp .7s .35s both;
+    max-width: 900px;
+  }
+  .hero h1 .highlight {
+    background: linear-gradient(135deg, var(--verde) 0%, var(--azul) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    margin: 20px auto 0; max-width: 600px;
+    font-size: clamp(1rem,2vw,1.2rem); color: var(--subtexto);
+    animation: fadeUp .7s .5s both;
+  }
+  .hero-actions {
+    display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+    margin-top: 40px;
+    animation: fadeUp .7s .65s both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── BOTONES HERO ─────────────────────────────────── */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 15px 30px; border-radius: 100px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    border: none; outline: none;
+    position: relative; overflow: hidden;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,.08);
+    transform: translateX(-101%);
+    transition: transform .3s ease;
+  }
+  .btn:hover::after { transform: translateX(0); }
+  .btn:hover { transform: translateY(-3px); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--verde), var(--azul));
+    color: #fff;
+    box-shadow: 0 4px 24px rgba(0,200,150,.35);
+  }
+  .btn-primary:hover { box-shadow: 0 8px 32px rgba(0,200,150,.5); }
+
+  .btn-secondary {
+    background: var(--gris2); color: var(--texto);
+    border: 1px solid var(--gris3);
+    box-shadow: var(--sombra);
+  }
+  .btn-secondary:hover { border-color: var(--verde); box-shadow: 0 4px 20px rgba(0,200,150,.2); }
+
+  /* ─── MÉTRICAS HERO ────────────────────────────────── */
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;
+    margin-top: 56px;
+    animation: fadeUp .7s .8s both;
+  }
+  .stat {
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .stat-num {
+    font-size: 2rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--amarillo), var(--rosa));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .stat-label { font-size: .78rem; color: var(--subtexto); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ─── DIVIDER ───────────────────────────────────────── */
+  .divider { width: 100%; height: 1px; background: var(--gris2); margin: 0; }
+
+  /* ─── SECCIÓN WRAPPER ──────────────────────────────── */
+  section { position: relative; z-index: 1; padding: 96px clamp(16px,6vw,80px); }
+  .section-label {
+    display: inline-block; font-size: .75rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 2px; color: var(--verde);
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900; letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-sub { color: var(--subtexto); font-size: 1.05rem; margin-bottom: 48px; max-width: 560px; }
+
+  /* ─── TARJETAS NICHO ───────────────────────────────── */
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 20px; }
+  .card {
+    background: var(--gris1);
+    border: 1px solid var(--gris2);
+    border-radius: var(--radio);
+    padding: 28px;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--verde), var(--azul));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .3s ease;
+  }
+  .card:hover { transform: translateY(-6px); border-color: var(--verde); box-shadow: 0 16px 40px rgba(0,200,150,.15); }
+  .card:hover::before { transform: scaleX(1); }
+  .card-icon { font-size: 2rem; margin-bottom: 16px; }
+  .card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+  .card p { font-size: .88rem; color: var(--subtexto); }
+  .card-tag {
+    display: inline-block; margin-top: 14px;
+    background: rgba(0,200,150,.1); border: 1px solid rgba(0,200,150,.25);
+    color: var(--verde); border-radius: 100px;
+    font-size: .72rem; font-weight: 700; padding: 4px 10px; text-transform: uppercase;
+  }
+
+  /* ─── CALENDARIO 30 DÍAS ───────────────────────────── */
+  .calendar-section { background: var(--gris1); border-top: 1px solid var(--gris2); border-bottom: 1px solid var(--gris2); }
+  .weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .week-card {
+    background: var(--gris2);
+    border: 1px solid var(--gris3);
+    border-radius: var(--radio);
+    overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .week-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.4); }
+  .week-header {
+    background: linear-gradient(90deg, var(--verde2), var(--azul));
+    padding: 14px 20px;
+    font-weight: 800; font-size: .9rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .week-header span { background: rgba(255,255,255,.2); border-radius: 100px; padding: 3px 10px; font-size: .75rem; }
+  .day-list { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+  .day-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 10px 12px; border-radius: 10px;
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.06);
+    transition: background .2s;
+    cursor: pointer;
+  }
+  .day-item:hover { background: rgba(0,200,150,.08); border-color: rgba(0,200,150,.2); }
+  .day-num {
+    min-width: 28px; height: 28px; border-radius: 50%;
+    background: var(--gris3); display: flex; align-items: center; justify-content: center;
+    font-size: .75rem; font-weight: 800; color: var(--verde); flex-shrink: 0;
+  }
+  .day-info { flex: 1; }
+  .day-title { font-size: .85rem; font-weight: 700; line-height: 1.3; }
+  .day-format { font-size: .72rem; color: var(--subtexto); margin-top: 3px; }
+  .day-platform {
+    display: flex; gap: 5px; align-items: center;
+    font-size: .65rem; font-weight: 700; color: var(--subtexto);
+    flex-shrink: 0;
+  }
+  .plt-ig { color: #E1306C; }
+  .plt-tt { color: #fff; }
+
+  /* ─── AFILIADOS ────────────────────────────────────── */
+  .afiliados-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); gap: 16px; }
+  .aff-card {
+    background: var(--gris1); border: 1px solid var(--gris2);
+    border-radius: var(--radio); padding: 20px 22px;
+    display: flex; align-items: center; gap: 16px;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+  }
+  .aff-card:hover { transform: translateX(4px); border-color: var(--amarillo); box-shadow: 0 4px 20px rgba(247,201,72,.12); }
+  .aff-icon { font-size: 2.2rem; flex-shrink: 0; }
+  .aff-info h4 { font-size: .95rem; font-weight: 800; }
+  .aff-info p { font-size: .78rem; color: var(--subtexto); margin-top: 2px; }
+  .aff-badge {
+    margin-left: auto; flex-shrink: 0;
+    background: rgba(247,201,72,.15); border: 1px solid rgba(247,201,72,.3);
+    color: var(--amarillo); border-radius: 100px;
+    font-size: .7rem; font-weight: 800; padding: 4px 10px; white-space: nowrap;
+  }
+
+  /* ─── REDES SOCIALES ───────────────────────────────── */
+  .social-section { text-align: center; }
+  .social-cards {
+    display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+    margin-top: 48px;
+  }
+  .social-card {
+    width: 280px;
+    border-radius: 20px;
+    padding: 32px 24px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+    border: 1px solid var(--gris3);
+    position: relative; overflow: hidden;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .social-card::before {
+    content: ''; position: absolute; inset: 0;
+    opacity: 0; transition: opacity .3s;
+  }
+  .social-card:hover { transform: translateY(-8px) scale(1.02); }
+  .social-card:hover::before { opacity: .06; }
+
+  .sc-ig { background: linear-gradient(145deg, #1a0a1a, #21262D); }
+  .sc-ig .social-icon { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+  .sc-ig:hover { box-shadow: 0 20px 60px rgba(214,36,159,.3); border-color: #d6249f; }
+
+  .sc-tt { background: linear-gradient(145deg, #0a0a1a, #21262D); }
+  .sc-tt .social-icon { background: linear-gradient(135deg, #010101, #69C9D0); }
+  .sc-tt:hover { box-shadow: 0 20px 60px rgba(105,201,208,.25); border-color: #69C9D0; }
+
+  .social-icon {
+    width: 64px; height: 64px; border-radius: 18px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem;
+    animation: iconBounce 2.5s ease-in-out infinite;
+  }
+  @keyframes iconBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .sc-tt .social-icon { animation-delay: .4s; }
+
+  .social-card h3 { font-size: 1.2rem; font-weight: 900; }
+  .social-card p { font-size: .85rem; color: var(--subtexto); text-align: center; }
+  .followers { font-size: 1.6rem; font-weight: 900; color: var(--verde); }
+  .social-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 24px; border-radius: 100px;
+    font-size: .9rem; font-weight: 700; cursor: pointer;
+    border: none; transition: transform .15s, box-shadow .15s;
+    width: 100%; justify-content: center;
+  }
+  .social-btn-ig { background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+  .social-btn-ig:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(220,39,67,.4); }
+  .social-btn-tt { background: #fff; color: #000; }
+  .social-btn-tt:hover { transform: scale(1.04); box-shadow: 0 8px 24px rgba(255,255,255,.2); }
+
+  /* ─── TIPS RÁPIDOS ─────────────────────────────────── */
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 16px; }
+  .tip {
+    display: flex; gap: 16px; align-items: flex-start;
+    background: var(--gris1); border: 1px solid var(--gris2);
+    border-radius: var(--radio); padding: 20px;
+    transition: border-color .2s, background .2s;
+  }
+  .tip:hover { border-color: var(--azul); background: rgba(88,166,255,.04); }
+  .tip-num {
+    min-width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(88,166,255,.15); border: 1px solid rgba(88,166,255,.25);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; font-size: .85rem; color: var(--azul); flex-shrink: 0;
+  }
+  .tip h4 { font-size: .9rem; font-weight: 800; margin-bottom: 4px; }
+  .tip p { font-size: .8rem; color: var(--subtexto); }
+
+  /* ─── NEWSLETTER ───────────────────────────────────── */
+  .newsletter {
+    background: linear-gradient(135deg, rgba(0,200,150,.1), rgba(88,166,255,.1));
+    border: 1px solid rgba(0,200,150,.2);
+    border-radius: 24px; padding: 56px 40px;
+    text-align: center; max-width: 640px; margin: 0 auto;
+  }
+  .newsletter h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 12px; }
+  .newsletter p { color: var(--subtexto); margin-bottom: 32px; }
+  .newsletter-form { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+  .newsletter-input {
+    flex: 1; min-width: 200px; max-width: 320px;
+    padding: 14px 20px; border-radius: 100px;
+    border: 1px solid var(--gris3); background: var(--gris2);
+    color: var(--texto); font-size: .95rem; outline: none;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .newsletter-input:focus { border-color: var(--verde); box-shadow: 0 0 0 3px rgba(0,200,150,.15); }
+  .newsletter-input::placeholder { color: var(--subtexto); }
+
+  /* ─── FOOTER ───────────────────────────────────────── */
+  footer {
+    background: var(--gris1); border-top: 1px solid var(--gris2);
+    padding: 48px clamp(16px,6vw,80px) 32px;
+    position: relative; z-index: 1;
+  }
+  .footer-top { display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 40px; }
+  .footer-brand .nav-logo { font-size: 1.4rem; }
+  .footer-brand p { color: var(--subtexto); font-size: .85rem; margin-top: 8px; max-width: 240px; }
+  .footer-links h4 { font-size: .85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; color: var(--subtexto); }
+  .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: .88rem; color: var(--subtexto); transition: color .15s; }
+  .footer-links a:hover { color: var(--verde); }
+  .footer-bottom {
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--gris2); padding-top: 24px;
+  }
+  .footer-bottom p { font-size: .8rem; color: var(--subtexto); }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--gris2); border: 1px solid var(--gris3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; transition: background .2s, transform .15s;
+  }
+  .footer-social a:hover { background: var(--verde); transform: translateY(-2px); }
+
+  /* ─── FLOATING CTA ─────────────────────────────────── */
+  .float-cta {
+    position: fixed; bottom: 24px; right: 24px; z-index: 200;
+    display: flex; flex-direction: column; gap: 10px; align-items: flex-end;
+  }
+  .float-btn {
+    width: 52px; height: 52px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; cursor: pointer; border: none;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: var(--sombra);
+  }
+  .float-btn:hover { transform: scale(1.12) translateY(-2px); }
+  .float-ig { background: linear-gradient(135deg, #f09433, #dc2743, #bc1888); }
+  .float-tt { background: #000; border: 1px solid #333; }
+  .float-wa { background: #25D366; }
+
+  /* ─── SCROLL REVEAL ─────────────────────────────────── */
+  .reveal {
+    opacity: 0; transform: translateY(36px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── TICKER ─────────────────────────────────────────── */
+  .ticker-wrap {
+    background: var(--verde); overflow: hidden;
+    height: 38px; display: flex; align-items: center;
+    position: relative; z-index: 1;
+  }
+  .ticker-content {
+    display: flex; white-space: nowrap;
+    animation: ticker 30s linear infinite;
+    gap: 60px;
+  }
+  .ticker-content span { font-size: .8rem; font-weight: 700; color: var(--oscuro); }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ─── PROGRESS BARS ─────────────────────────────────── */
+  .progress-item { margin-bottom: 20px; }
+  .progress-label { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: .85rem; font-weight: 700; }
+  .progress-bar { height: 8px; border-radius: 100px; background: var(--gris2); overflow: hidden; }
+  .progress-fill {
+    height: 100%; border-radius: 100px;
+    background: linear-gradient(90deg, var(--verde), var(--azul));
+    width: 0; transition: width 1.4s cubic-bezier(.4,0,.2,1);
+  }
+
+  /* ─── TOOLTIP ────────────────────────────────────────── */
+  .tooltip-wrap { position: relative; display: inline-block; }
+  .tooltip-wrap .tooltip-box {
+    visibility: hidden; opacity: 0;
+    background: var(--gris1); border: 1px solid var(--gris2);
+    color: var(--texto); font-size: .8rem;
+    padding: 8px 12px; border-radius: 10px;
+    position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%);
+    white-space: nowrap; transition: opacity .2s;
+    box-shadow: var(--sombra); pointer-events: none; z-index: 999;
+  }
+  .tooltip-wrap:hover .tooltip-box { visibility: visible; opacity: 1; }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────── */
+  @media (max-width: 640px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+    .hero-stats { gap: 20px; }
+    .newsletter { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Partículas -->
+<div id="particles"></div>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">💶 FinanzasLibres</span>
+  <div class="nav-links">
+    <a href="#nicho">El Nicho</a>
+    <a href="#calendario">30 Días</a>
+    <a href="#afiliados">Afiliados</a>
+    <a href="#libros">📚 Libros</a>
+    <a href="#redes">Redes</a>
+    <a href="#newsletter" class="nav-cta">¡Únete gratis!</a>
+  </div>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap" style="margin-top:64px;">
+  <div class="ticker-content" id="ticker">
+    <span>💰 Ahorra 300€/mes con este truco</span>
+    <span>📈 Trade Republic vs Indexa Capital: ¿cuál elige?</span>
+    <span>🏠 Hipoteca fija vs variable en España 2026</span>
+    <span>💳 Mejores cuentas sin comisiones</span>
+    <span>🔥 #FinanzasPersonales viral en TikTok</span>
+    <span>📊 Fondos indexados para principiantes</span>
+    <span>💡 Regla del 50/30/20 explicada</span>
+    <span>🚀 Cómo ganar tu primer €1.000 de ingresos pasivos</span>
+    <span>💰 Ahorra 300€/mes con este truco</span>
+    <span>📈 Trade Republic vs Indexa Capital: ¿cuál elige?</span>
+    <span>🏠 Hipoteca fija vs variable en España 2026</span>
+    <span>💳 Mejores cuentas sin comisiones</span>
+    <span>🔥 #FinanzasPersonales viral en TikTok</span>
+    <span>📊 Fondos indexados para principiantes</span>
+    <span>💡 Regla del 50/30/20 explicada</span>
+    <span>🚀 Cómo ganar tu primer €1.000 de ingresos pasivos</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span></span> Nicho #1 más buscado en España</div>
+  <h1>Aprende a manejar tu <span class="highlight">dinero en España</span> y empieza hoy</h1>
+  <p>Trucos reales de ahorro, inversión y libertad financiera. Contenido diseñado para TikTok e Instagram que conecta, educa y convierte.</p>
+  <div class="hero-actions">
+    <a href="#calendario" class="btn btn-primary">📅 Ver los 30 días de contenido</a>
+    <a href="#redes" class="btn btn-secondary">📲 Seguir en redes sociales</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num" data-count="2.4">0</span><span style="color:var(--verde);font-size:1.5rem;font-weight:900">M</span><span class="stat-label">Búsquedas/mes en ES</span></div>
+    <div class="stat"><span class="stat-num" data-count="65">0</span><span style="color:var(--verde);font-size:1.5rem;font-weight:900">%</span><span class="stat-label">Tasa de engagement</span></div>
+    <div class="stat"><span class="stat-num" data-count="800">0</span><span style="color:var(--verde);font-size:1.5rem;font-weight:900">€</span><span class="stat-label">Comisión media afiliados</span></div>
+    <div class="stat"><span class="stat-num" data-count="30">0</span><span style="color:var(--verde);font-size:1.5rem;font-weight:900">d</span><span class="stat-label">Para tener resultados</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NICHO -->
+<section id="nicho">
+  <p class="section-label reveal">Por qué este nicho</p>
+  <h2 class="reveal">Finanzas Personales: el nicho <span style="color:var(--verde)">más rentable</span> en España</h2>
+  <p class="section-sub reveal">Millones de españoles buscan activamente cómo ahorrar e invertir. Alta demanda = alta monetización.</p>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <div class="card-icon">🔍</div>
+      <h3>Búsqueda masiva</h3>
+      <p>«Cómo ahorrar dinero España» tiene +2.4M búsquedas/mes. La gente lo necesita y lo busca activamente todos los días.</p>
+      <span class="card-tag">Alto volumen</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">💸</div>
+      <h3>Afiliados altamente pagados</h3>
+      <p>Trade Republic, Revolut, DEGIRO e Indexa Capital pagan entre 30€ y 200€ por cada cliente que refieras.</p>
+      <span class="card-tag">CPM Alto</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📱</div>
+      <h3>Viral en TikTok e Instagram</h3>
+      <p>#FinanzasPersonales tiene miles de millones de views. Los reels de tips de ahorro alcanzan alcance orgánico enorme.</p>
+      <span class="card-tag">Viral</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🎯</div>
+      <h3>Audiencia fiel y compradora</h3>
+      <p>La gente que sigue contenido financiero compra cursos, apps y servicios. Conversión muy alta respecto a entretenimiento.</p>
+      <span class="card-tag">Alta conversión</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🏆</div>
+      <h3>Poca competencia real</h3>
+      <p>Aunque hay cuentas, pocas tienen contenido de calidad en español adaptado a la realidad española (IRPF, hipotecas, ERTEs…).</p>
+      <span class="card-tag">Oportunidad</span>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">⚡</div>
+      <h3>Retorno rápido</h3>
+      <p>Con un link de afiliado de Trade Republic, con solo 10 referidos al mes puedes ganar 500–2.000€ extras sin inversión inicial.</p>
+      <span class="card-tag">Dinero rápido</span>
+    </div>
+  </div>
+
+  <!-- Popularidad de subtemas -->
+  <div style="margin-top:56px;" class="reveal">
+    <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:28px;">Popularidad de subtemas en España 🇪🇸</h3>
+    <div style="max-width:600px;">
+      <div class="progress-item">
+        <div class="progress-label"><span>💰 Ahorro y control de gastos</span><span style="color:var(--verde)">95%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="95"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-label"><span>📈 Fondos indexados y ETFs</span><span style="color:var(--verde)">88%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="88"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-label"><span>🏠 Hipotecas y vivienda</span><span style="color:var(--verde)">82%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="82"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-label"><span>🪙 Criptomonedas</span><span style="color:var(--verde)">74%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="74"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-label"><span>🎯 FIRE / Libertad financiera</span><span style="color:var(--verde)">67%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="67"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CALENDARIO 30 DÍAS -->
+<section id="calendario" class="calendar-section">
+  <p class="section-label reveal">Listo para publicar</p>
+  <h2 class="reveal">📅 Plan de contenido — <span style="color:var(--verde)">30 días</span></h2>
+  <p class="section-sub reveal">Un post diario para Instagram y TikTok. Solo copia, graba y publica. Cada idea está optimizada para el algoritmo español.</p>
+
+  <div class="weeks-grid">
+
+    <!-- SEMANA 1 -->
+    <div class="week-card reveal">
+      <div class="week-header">🗓️ Semana 1 · Ahorro Básico <span>Días 1–7</span></div>
+      <div class="day-list">
+        <div class="day-item">
+          <div class="day-num">1</div>
+          <div class="day-info">
+            <div class="day-title">«El truco del sobre: así ahorré 300€ el primer mes»</div>
+            <div class="day-format">📹 Reel 30s · Gancho fuerte de apertura</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">2</div>
+          <div class="day-info">
+            <div class="day-title">«Cuánto cuesta vivir en España en 2026: la cifra real»</div>
+            <div class="day-format">📊 Carrusel datos reales</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">3</div>
+          <div class="day-info">
+            <div class="day-title">«La regla 50/30/20 que nadie te enseña en el colegio»</div>
+            <div class="day-format">📹 Reel 60s explicativo</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">4</div>
+          <div class="day-info">
+            <div class="day-title">«Cuentas bancarias sin comisiones en España 2026»</div>
+            <div class="day-format">📋 Lista/Comparativa (carrusel)</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">5</div>
+          <div class="day-info">
+            <div class="day-title">«Apps que uso para llevar mis gastos (GRATIS)»</div>
+            <div class="day-format">📱 Tutorial pantalla móvil</div>
+          </div>
+          <div class="day-platform"><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">6</div>
+          <div class="day-info">
+            <div class="day-title">«POV: llevas 6 meses ahorrando y te cambió la vida»</div>
+            <div class="day-format">🎭 Reel storytelling emocional</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">7</div>
+          <div class="day-info">
+            <div class="day-title">«Cómo crear un fondo de emergencia desde cero»</div>
+            <div class="day-format">📊 Infografía + stories interactivo</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEMANA 2 -->
+    <div class="week-card reveal">
+      <div class="week-header">🗓️ Semana 2 · Inversión Fácil <span>Días 8–14</span></div>
+      <div class="day-list">
+        <div class="day-item">
+          <div class="day-num">8</div>
+          <div class="day-info">
+            <div class="day-title">«Fondos indexados para dummies: todo lo que necesitas saber»</div>
+            <div class="day-format">📹 Reel educativo 90s</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">9</div>
+          <div class="day-info">
+            <div class="day-title">«Trade Republic vs MyInvestor: ¿cuál es mejor en España?»</div>
+            <div class="day-format">⚔️ Comparativa visual (carrusel)</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">10</div>
+          <div class="day-info">
+            <div class="day-title">«Si inviertes 100€/mes desde los 25, te espera esto a los 65»</div>
+            <div class="day-format">🤯 Hook de impacto — interés compuesto</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">11</div>
+          <div class="day-info">
+            <div class="day-title">«Cómo declarar fondos indexados en el IRPF»</div>
+            <div class="day-format">📝 Explicación paso a paso</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">12</div>
+          <div class="day-info">
+            <div class="day-title">«El S&P 500 en español: qué es y cómo comprar»</div>
+            <div class="day-format">📹 Tutorial + pantalla broker</div>
+          </div>
+          <div class="day-platform"><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">13</div>
+          <div class="day-info">
+            <div class="day-title">«¿Cuánto tengo invertido? Actualización de mi cartera»</div>
+            <div class="day-format">🔍 Contenido personal / transparencia</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">14</div>
+          <div class="day-info">
+            <div class="day-title">«Errores que cometí al empezar a invertir (no los repitas)»</div>
+            <div class="day-format">📣 Storytelling honesto + lección</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEMANA 3 -->
+    <div class="week-card reveal">
+      <div class="week-header">🗓️ Semana 3 · Ingresos Extras <span>Días 15–21</span></div>
+      <div class="day-list">
+        <div class="day-item">
+          <div class="day-num">15</div>
+          <div class="day-info">
+            <div class="day-title">«5 formas de ganar dinero extra desde España sin salir de casa»</div>
+            <div class="day-format">📋 Carrusel explicativo</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">16</div>
+          <div class="day-info">
+            <div class="day-title">«Cuánto gano con marketing de afiliados al mes (cifras reales)»</div>
+            <div class="day-format">💰 Pantalla de ingresos — muy viral</div>
+          </div>
+          <div class="day-platform"><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">17</div>
+          <div class="day-info">
+            <div class="day-title">«Cómo vender en Wallapop para pagar tus gastos fijos»</div>
+            <div class="day-format">📱 Tutorial práctico</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">18</div>
+          <div class="day-info">
+            <div class="day-title">«El negocio de 0€ de inversión que puedes empezar hoy»</div>
+            <div class="day-format">⚡ Reel motivacional + llamada a la acción</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">19</div>
+          <div class="day-info">
+            <div class="day-title">«Freelance en España: cuánto cobrar y cómo facturar»</div>
+            <div class="day-format">📝 Guía autónomos / facturación</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">20</div>
+          <div class="day-info">
+            <div class="day-title">«Mis 3 fuentes de ingresos pasivos en España»</div>
+            <div class="day-format">🎯 Personal + transparencia</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">21</div>
+          <div class="day-info">
+            <div class="day-title">«Respondo vuestras preguntas de dinero (Q&A)»</div>
+            <div class="day-format">💬 Q&A desde comentarios / stories</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEMANA 4 -->
+    <div class="week-card reveal">
+      <div class="week-header">🗓️ Semana 4 · Libertad Financiera <span>Días 22–30</span></div>
+      <div class="day-list">
+        <div class="day-item">
+          <div class="day-num">22</div>
+          <div class="day-info">
+            <div class="day-title">«Qué es el movimiento FIRE y cómo funciona en España»</div>
+            <div class="day-format">📹 Explicación + números reales</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">23</div>
+          <div class="day-info">
+            <div class="day-title">«Cuánto dinero necesitas para retirarte en España a los 45»</div>
+            <div class="day-format">🧮 Calculadora visual — muy compartido</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">24</div>
+          <div class="day-info">
+            <div class="day-title">«Plan de ahorro de 12 meses: del 0 al fondo de emergencia»</div>
+            <div class="day-format">📊 Carrusel con plantilla descargable</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">25</div>
+          <div class="day-info">
+            <div class="day-title">«La hipoteca que no deberías firmar nunca» </div>
+            <div class="day-format">⚠️ Contenido de alerta — muy viral</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">26</div>
+          <div class="day-info">
+            <div class="day-title">«Cómo reducir tu factura de luz en España hasta un 40%»</div>
+            <div class="day-format">💡 Tutorial práctico y útil</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">27</div>
+          <div class="day-info">
+            <div class="day-title">«Mis libros de finanzas favoritos (te cambian la mentalidad)»</div>
+            <div class="day-format">📚 Recomendaciones + afiliados Amazon</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">28</div>
+          <div class="day-info">
+            <div class="day-title">«Un año ahorrando: cuánto llevo acumulado (actualización)»</div>
+            <div class="day-format">🎉 Milestone personal — fideliza</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">29</div>
+          <div class="day-info">
+            <div class="day-title">«3 cosas que haría diferente si empezara de cero»</div>
+            <div class="day-format">🔥 Reflexión personal + engagement</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+        <div class="day-item">
+          <div class="day-num">30</div>
+          <div class="day-info">
+            <div class="day-title">«30 días de contenido financiero: qué funcionó y qué no»</div>
+            <div class="day-format">📈 Meta-post + llamada a suscripción</div>
+          </div>
+          <div class="day-platform"><span class="plt-ig">IG</span><span class="plt-tt">TT</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tips de formato -->
+  <div style="margin-top:48px;">
+    <h3 class="reveal" style="font-size:1.3rem;font-weight:800;margin-bottom:24px;">💡 Tips de formato para que tus posts exploten</h3>
+    <div class="tips-grid">
+      <div class="tip reveal">
+        <div class="tip-num">01</div>
+        <div><h4>Primeros 2 segundos son todo</h4><p>TikTok e Instagram miden la retención. Abre siempre con un dato impactante o pregunta directa.</p></div>
+      </div>
+      <div class="tip reveal">
+        <div class="tip-num">02</div>
+        <div><h4>Captions con pregunta</h4><p>Termina siempre con «¿Y tú cuánto ahorras al mes?». Los comentarios disparan el alcance.</p></div>
+      </div>
+      <div class="tip reveal">
+        <div class="tip-num">03</div>
+        <div><h4>Hashtags clave España</h4><p>#FinanzasPersonales #AhorroEspaña #InvierteYa #LibertadFinanciera #DineroEspaña</p></div>
+      </div>
+      <div class="tip reveal">
+        <div class="tip-num">04</div>
+        <div><h4>Publica entre 19h–21h</h4><p>La audiencia española en finanzas es más activa en la noche, después del trabajo.</p></div>
+      </div>
+      <div class="tip reveal">
+        <div class="tip-num">05</div>
+        <div><h4>Cara a cámara = más views</h4><p>Los vídeos con rostro humano visible tienen 3x más retención que pantallas o texto.</p></div>
+      </div>
+      <div class="tip reveal">
+        <div class="tip-num">06</div>
+        <div><h4>Link en bio solo 1 destino</h4><p>Manda siempre al mismo link de afiliado o newsletter. No pongas 10 links a la vez.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- AFILIADOS -->
+<section id="afiliados">
+  <p class="section-label reveal">Monetización</p>
+  <h2 class="reveal">💸 Programa de afiliados para <span style="color:var(--amarillo)">ganar dinero rápido</span></h2>
+  <p class="section-sub reveal">Estas plataformas pagan comisiones reales por cada usuario que refieras desde tus redes sociales.</p>
+  <div class="afiliados-grid">
+    <div class="aff-card reveal">
+      <div class="aff-icon">🟠</div>
+      <div class="aff-info">
+        <h4>Trade Republic</h4>
+        <p>Broker nº1 en España. Paga por referido. Ideal para contenido de inversión.</p>
+      </div>
+      <span class="aff-badge">Hasta 200€/ref</span>
+    </div>
+    <div class="aff-card reveal">
+      <div class="aff-icon">🔵</div>
+      <div class="aff-info">
+        <h4>Revolut</h4>
+        <p>Cuenta neobank muy popular. Bono de bienvenida + comisión por registro.</p>
+      </div>
+      <span class="aff-badge">50€/ref</span>
+    </div>
+    <div class="aff-card reveal">
+      <div class="aff-icon">🟢</div>
+      <div class="aff-info">
+        <h4>Indexa Capital</h4>
+        <p>Roboadvisor líder en España. Paga comisión recurrente mientras el usuario invierte.</p>
+      </div>
+      <span class="aff-badge">Recurrente</span>
+    </div>
+    <div class="aff-card reveal">
+      <div class="aff-icon">🔴</div>
+      <div class="aff-info">
+        <h4>DEGIRO</h4>
+        <p>Broker popular con comisiones bajas. Programa afiliados bien pagado.</p>
+      </div>
+      <span class="aff-badge">Hasta 100€/ref</span>
+    </div>
+    <a href="https://www.amazon.es/s?k=libros+finanzas+personales&tag=finanzaslibre-21" target="_blank" style="text-decoration:none;color:inherit;">
+    <div class="aff-card reveal" style="cursor:pointer;">
+      <div class="aff-icon">📦</div>
+      <div class="aff-info">
+        <h4>Amazon Afiliados ✅ Activo</h4>
+        <p>ID: <strong>finanzaslibre-21</strong> — Recomienda libros de finanzas y gana el 10% de cada compra.</p>
+      </div>
+      <span class="aff-badge">10% comisión</span>
+    </div>
+    </a>
+    <div class="aff-card reveal">
+      <div class="aff-icon">🎓</div>
+      <div class="aff-info">
+        <h4>Hotmart / Cursos</h4>
+        <p>Vende cursos de finanzas de otros o crea el tuyo. Hasta 50% de comisión.</p>
+      </div>
+      <span class="aff-badge">Hasta 50%</span>
+    </div>
+    <div class="aff-card reveal">
+      <div class="aff-icon">🏦</div>
+      <div class="aff-info">
+        <h4>FinanceAds</h4>
+        <p>Red de afiliados nº1 en España para bancos, seguros y brokers. Múltiples productos.</p>
+      </div>
+      <span class="aff-badge">Hasta 200€/ref</span>
+    </div>
+  </div>
+
+  <!-- CALCULADORA DE GANANCIAS -->
+  <div style="margin-top:56px;background:var(--gris1);border:1px solid var(--gris2);border-radius:20px;padding:40px;max-width:700px;margin-left:auto;margin-right:auto;" class="reveal">
+    <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:8px;text-align:center;">🧮 ¿Cuánto puedo ganar al mes?</h3>
+    <p style="color:var(--subtexto);text-align:center;font-size:.9rem;margin-bottom:32px;">Calcula tus ingresos con afiliados según tus seguidores</p>
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <div>
+        <label style="font-size:.85rem;font-weight:700;color:var(--subtexto);display:block;margin-bottom:8px;">Seguidores en TikTok/Instagram</label>
+        <input type="range" min="100" max="50000" value="1000" step="100" id="followers" oninput="calcAfiliados()" style="width:100%;accent-color:var(--verde);">
+        <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--subtexto);margin-top:4px;"><span>100</span><span id="followersVal" style="color:var(--verde);font-weight:700;">1.000</span><span>50.000</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;">
+        <div style="background:var(--gris2);border-radius:12px;padding:16px;text-align:center;">
+          <div id="earn-amazon" style="font-size:1.6rem;font-weight:900;color:var(--amarillo);">8€</div>
+          <div style="font-size:.75rem;color:var(--subtexto);margin-top:4px;">📦 Amazon</div>
+        </div>
+        <div style="background:var(--gris2);border-radius:12px;padding:16px;text-align:center;">
+          <div id="earn-broker" style="font-size:1.6rem;font-weight:900;color:var(--verde);">30€</div>
+          <div style="font-size:.75rem;color:var(--subtexto);margin-top:4px;">📈 Brokers</div>
+        </div>
+        <div style="background:var(--gris2);border-radius:12px;padding:16px;text-align:center;">
+          <div id="earn-total" style="font-size:1.6rem;font-weight:900;color:var(--azul);">38€</div>
+          <div style="font-size:.75rem;color:var(--subtexto);margin-top:4px;">💶 Total/mes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- LIBROS RECOMENDADOS -->
+<section id="libros" style="padding:80px 20px;max-width:1100px;margin:0 auto;text-align:center;">
+  <p class="section-label reveal">Afiliados Amazon</p>
+  <h2 class="reveal">📚 Libros que <span style="color:var(--amarillo)">cambian tu mentalidad</span> financiera</h2>
+  <p class="section-sub reveal">Los libros de finanzas más vendidos en España. Cada compra apoya este proyecto sin coste extra para ti.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;margin-top:40px;">
+
+    <!-- Libro 1 -->
+    <a href="https://www.amazon.es/s?k=padre+rico+padre+pobre+kiyosaki&tag=finanzaslibre-21" target="_blank" style="text-decoration:none;">
+    <div class="reveal" style="background:var(--gris1);border:1px solid var(--gris2);border-radius:var(--radio);padding:24px 18px;transition:transform .3s,border-color .3s;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amarillo)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--gris2)'">
+      <div style="font-size:48px;margin-bottom:12px;">📗</div>
+      <div style="font-size:11px;color:var(--amarillo);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Bestseller #1</div>
+      <h4 style="color:var(--texto);margin:0 0 8px;font-size:15px;line-height:1.4;">Padre Rico, Padre Pobre</h4>
+      <p style="color:var(--subtexto);font-size:13px;margin:0 0 14px;">Robert Kiyosaki · El libro de finanzas más vendido de la historia.</p>
+      <span style="background:var(--amarillo);color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">Ver en Amazon →</span>
+    </div>
+    </a>
+
+    <!-- Libro 2 -->
+    <a href="https://www.amazon.es/s?k=psicologia+del+dinero+morgan+housel&tag=finanzaslibre-21" target="_blank" style="text-decoration:none;">
+    <div class="reveal" style="background:var(--gris1);border:1px solid var(--gris2);border-radius:var(--radio);padding:24px 18px;transition:transform .3s,border-color .3s;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amarillo)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--gris2)'">
+      <div style="font-size:48px;margin-bottom:12px;">📘</div>
+      <div style="font-size:11px;color:var(--amarillo);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Tendencia 2024</div>
+      <h4 style="color:var(--texto);margin:0 0 8px;font-size:15px;line-height:1.4;">Psicología del Dinero</h4>
+      <p style="color:var(--subtexto);font-size:13px;margin:0 0 14px;">Morgan Housel · Cómo piensa la gente sobre dinero y cómo mejorarlo.</p>
+      <span style="background:var(--amarillo);color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">Ver en Amazon →</span>
+    </div>
+    </a>
+
+    <!-- Libro 3 -->
+    <a href="https://www.amazon.es/s?k=el+hombre+mas+rico+de+babilonia&tag=finanzaslibre-21" target="_blank" style="text-decoration:none;">
+    <div class="reveal" style="background:var(--gris1);border:1px solid var(--gris2);border-radius:var(--radio);padding:24px 18px;transition:transform .3s,border-color .3s;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amarillo)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--gris2)'">
+      <div style="font-size:48px;margin-bottom:12px;">📙</div>
+      <div style="font-size:11px;color:var(--amarillo);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Clásico eterno</div>
+      <h4 style="color:var(--texto);margin:0 0 8px;font-size:15px;line-height:1.4;">El Hombre Más Rico de Babilonia</h4>
+      <p style="color:var(--subtexto);font-size:13px;margin:0 0 14px;">George Clason · Las leyes del dinero contadas como parábolas.</p>
+      <span style="background:var(--amarillo);color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">Ver en Amazon →</span>
+    </div>
+    </a>
+
+    <!-- Libro 4 -->
+    <a href="https://www.amazon.es/s?k=el+inversor+inteligente+benjamin+graham&tag=finanzaslibre-21" target="_blank" style="text-decoration:none;">
+    <div class="reveal" style="background:var(--gris1);border:1px solid var(--gris2);border-radius:var(--radio);padding:24px 18px;transition:transform .3s,border-color .3s;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amarillo)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--gris2)'">
+      <div style="font-size:48px;margin-bottom:12px;">📕</div>
+      <div style="font-size:11px;color:var(--amarillo);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Biblia de inversión</div>
+      <h4 style="color:var(--texto);margin:0 0 8px;font-size:15px;line-height:1.4;">El Inversor Inteligente</h4>
+      <p style="color:var(--subtexto);font-size:13px;margin:0 0 14px;">Benjamin Graham · La guía de inversión favorita de Warren Buffett.</p>
+      <span style="background:var(--amarillo);color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">Ver en Amazon →</span>
+    </div>
+    </a>
+
+    <!-- Libro 5 -->
+    <a href="https://www.amazon.es/s?k=los+secretos+de+la+mente+millonaria+harv+eker&tag=finanzaslibre-21" target="_blank" style="text-decoration:none;">
+    <div class="reveal" style="background:var(--gris1);border:1px solid var(--gris2);border-radius:var(--radio);padding:24px 18px;transition:transform .3s,border-color .3s;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amarillo)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--gris2)'">
+      <div style="font-size:48px;margin-bottom:12px;">🧠</div>
+      <div style="font-size:11px;color:var(--amarillo);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Mentalidad</div>
+      <h4 style="color:var(--texto);margin:0 0 8px;font-size:15px;line-height:1.4;">Los Secretos de la Mente Millonaria</h4>
+      <p style="color:var(--subtexto);font-size:13px;margin:0 0 14px;">T. Harv Eker · Reprograma tus creencias sobre el dinero.</p>
+      <span style="background:var(--amarillo);color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">Ver en Amazon →</span>
+    </div>
+    </a>
+
+    <!-- Libro 6 -->
+    <a href="https://www.amazon.es/s?k=un+paso+puede+cambiar+tu+vida+kaizen&tag=finanzaslibre-21" target="_blank" style="text-decoration:none;">
+    <div class="reveal" style="background:var(--gris1);border:1px solid var(--gris2);border-radius:var(--radio);padding:24px 18px;transition:transform .3s,border-color .3s;cursor:pointer;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='var(--amarillo)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='var(--gris2)'">
+      <div style="font-size:48px;margin-bottom:12px;">🚀</div>
+      <div style="font-size:11px;color:var(--amarillo);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Hábitos de éxito</div>
+      <h4 style="color:var(--texto);margin:0 0 8px;font-size:15px;line-height:1.4;">Un Pequeño Paso Puede Cambiar Tu Vida</h4>
+      <p style="color:var(--subtexto);font-size:13px;margin:0 0 14px;">Robert Maurer · El método Kaizen para mejorar tus finanzas.</p>
+      <span style="background:var(--amarillo);color:#000;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">Ver en Amazon →</span>
+    </div>
+    </a>
+
+  </div>
+
+  <a href="https://www.amazon.es/s?k=libros+finanzas+personales+inversion&tag=finanzaslibre-21" target="_blank" style="display:inline-block;margin-top:36px;padding:14px 36px;background:var(--amarillo);color:#000;border-radius:30px;font-weight:700;font-size:15px;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+    📦 Ver todos los libros en Amazon →
+  </a>
+</section>
+
+<div class="divider"></div>
+
+<!-- REDES SOCIALES -->
+<section id="redes" class="social-section">
+  <p class="section-label reveal">Síguenos</p>
+  <h2 class="reveal">📲 Únete a la comunidad</h2>
+  <p style="color:var(--subtexto);max-width:500px;margin:0 auto;" class="reveal">
+    Contenido diario de finanzas reales. Trucos de ahorro, novedades de inversión y transparencia total sobre ingresos.
+  </p>
+  <div class="social-cards">
+    <div class="social-card sc-ig reveal">
+      <div class="social-icon">📸</div>
+      <h3>Instagram</h3>
+      <p>Carruseles educativos, stories con encuestas y reels de tips de ahorro. Comunidad activa y cercana.</p>
+      <div class="followers">@finanzaslibres_es</div>
+      <a href="https://www.instagram.com/" target="_blank" class="social-btn social-btn-ig">
+        📸 Seguir en Instagram
+      </a>
+    </div>
+    <div class="social-card sc-tt reveal">
+      <div class="social-icon">🎵</div>
+      <h3>TikTok</h3>
+      <p>Vídeos cortos virales sobre dinero, inversión y ahorro. El sitio donde crece más rápido la audiencia.</p>
+      <div class="followers">@finanzaslibres</div>
+      <a href="https://www.tiktok.com/" target="_blank" class="social-btn social-btn-tt">
+        🎵 Seguir en TikTok
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="newsletter reveal">
+    <div style="font-size:3rem;margin-bottom:16px;">✉️</div>
+    <h2>Recibe los mejores trucos <span style="color:var(--verde)">cada semana gratis</span></h2>
+    <p>Sin spam. Solo contenido que te ayuda a ahorrar más, invertir mejor y ganar dinero extra desde España.</p>
+    <form class="newsletter-form" onsubmit="handleSubmit(event)">
+      <input type="email" class="newsletter-input" placeholder="tu@email.com" required id="emailInput">
+      <button type="submit" class="btn btn-primary" style="border-radius:100px;">Quiero aprender →</button>
+    </form>
+    <p id="success-msg" style="display:none;color:var(--verde);font-weight:700;margin-top:16px;">✅ ¡Genial! Revisa tu email para confirmar.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">💶 FinanzasLibres</div>
+      <p>Tu guía de finanzas personales en España. Ahorra más, invierte mejor y vive libre.</p>
+      <div class="footer-social" style="margin-top:16px;">
+        <a href="https://www.instagram.com/" target="_blank" title="Instagram">📸</a>
+        <a href="https://www.tiktok.com/" target="_blank" title="TikTok">🎵</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Contenido</h4>
+      <ul>
+        <li><a href="#nicho">Por qué finanzas</a></li>
+        <li><a href="#calendario">Plan 30 días</a></li>
+        <li><a href="#afiliados">Ganar con afiliados</a></li>
+        <li><a href="#libros">📚 Libros recomendados</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="#redes">Instagram</a></li>
+        <li><a href="#redes">TikTok</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Aviso legal</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+        <li><a href="#">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 FinanzasLibres España · Contenido informativo, no asesoramiento financiero.</p>
+    <p style="color:var(--verde);font-weight:700;">#FinanzasPersonales #AhorroEspaña</p>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="float-cta">
+  <a href="https://www.instagram.com/" target="_blank">
+    <button class="float-btn float-ig" title="Instagram">📸</button>
+  </a>
+  <a href="https://www.tiktok.com/" target="_blank">
+    <button class="float-btn float-tt" title="TikTok">🎵</button>
+  </a>
+  <a href="https://wa.me/34600000000" target="_blank">
+    <button class="float-btn float-wa" title="WhatsApp">💬</button>
+  </a>
+</div>
+
+<script>
+// ── PARTÍCULAS ─────────────────────────────────────────
+(function() {
+  const container = document.getElementById('particles');
+  const colors = ['#00C896','#58A6FF','#F7C948','#FF6B9D'];
+  for (let i = 0; i < 60; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.animationDuration = (Math.random() * 18 + 10) + 's';
+    p.style.animationDelay = (Math.random() * 15) + 's';
+    container.appendChild(p);
+  }
+})();
+
+// ── CONTADORES ANIMADOS ─────────────────────────────────
+function animateCounters() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = parseFloat(el.dataset.count);
+    const isDecimal = target % 1 !== 0;
+    let start = 0;
+    const duration = 1800;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = isDecimal ? start.toFixed(1) : Math.floor(start);
+    }, 16);
+  });
+}
+
+// ── SCROLL REVEAL ──────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => { entry.target.classList.add('visible'); }, i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── PROGRESS BARS ──────────────────────────────────────
+const progObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.progress-fill').forEach(bar => {
+        setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 200);
+      });
+      progObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+const progSection = document.querySelector('.progress-item')?.closest('div');
+if (progSection) progObserver.observe(progSection.parentElement);
+
+// Activar contadores cuando el hero es visible
+const heroObserver = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) { animateCounters(); heroObserver.disconnect(); }
+}, { threshold: 0.3 });
+heroObserver.observe(document.querySelector('.hero-stats'));
+
+// ── NEWSLETTER SUBMIT ──────────────────────────────────
+function calcAfiliados() {
+  const f = parseInt(document.getElementById('followers').value);
+  document.getElementById('followersVal').textContent = f.toLocaleString('es-ES');
+  const rate = 0.003;
+  const clicks = Math.floor(f * rate);
+  const amazon = Math.max(1, Math.floor(clicks * 0.05 * 15));
+  const broker = Math.max(1, Math.floor(clicks * 0.01 * 80));
+  const total = amazon + broker;
+  document.getElementById('earn-amazon').textContent = amazon + '€';
+  document.getElementById('earn-broker').textContent = broker + '€';
+  document.getElementById('earn-total').textContent = total + '€';
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const input = document.getElementById('emailInput');
+  input.style.display = 'none';
+  e.target.querySelector('button').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+}
+
+// ── NAVBAR TRANSPARENCIA ────────────────────────────────
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 60) {
+    nav.style.background = 'rgba(13,17,23,.97)';
+  } else {
+    nav.style.background = 'rgba(13,17,23,.85)';
+  }
+}, { passive: true });
+
+// ── HIGHLIGHT ACTIVE SECTION ─────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => a.style.color = '');
+      const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+      if (active && !active.classList.contains('nav-cta')) active.style.color = 'var(--verde)';
+    }
+  });
+}, { threshold: 0.5 });
+sections.forEach(s => sectionObserver.observe(s));
+
+// ── TOOLTIPS EN DÍAS DEL CALENDARIO ─────────────────────
+document.querySelectorAll('.day-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const title = item.querySelector('.day-title').textContent;
+    const format = item.querySelector('.day-format').textContent;
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+      position:fixed;bottom:90px;left:50%;transform:translateX(-50%);
+      background:#00C896;color:#0D1117;padding:12px 24px;border-radius:100px;
+      font-weight:800;font-size:.85rem;z-index:9999;
+      animation:fadeUp .3s ease both;pointer-events:none;
+      box-shadow:0 4px 20px rgba(0,200,150,.4);
+      max-width:90vw;text-align:center;
+    `;
+    notification.textContent = `📋 Guardado: ${title.slice(0,40)}…`;
+    document.body.appendChild(notification);
+    setTimeout(() => notification.remove(), 2500);
+  });
+});
+</script>
+</body>
+</html>
