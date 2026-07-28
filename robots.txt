@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calm-lamington-b22639.netlify.app/sitemap.xml
