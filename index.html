@@ -1000,7 +1000,7 @@
 <!-- AFILIADOS -->
 <section id="afiliados">
   <p class="section-label reveal">Monetización</p>
-  <h2 class="reveal">💸 Programa de afiliados para <span style="color:var(--amarillo)">ganar dinero rápido</span></h2>
+  <h2 class="reveal">💼 Recomenda lo que usas y <span style="color:var(--amarillo)">genera ingresos reales</span></h2>
   <p class="section-sub reveal">Estas plataformas pagan comisiones reales por cada usuario que refieras desde tus redes sociales.</p>
   <div class="afiliados-grid">
     <div class="aff-card reveal">
@@ -1279,8 +1279,12 @@
     <div style="font-size:3rem;margin-bottom:16px;">✉️</div>
     <h2>Recibe los mejores trucos <span style="color:var(--verde)">cada semana gratis</span></h2>
     <p>Sin spam. Solo contenido que te ayuda a ahorrar más, invertir mejor y ganar dinero extra desde España.</p>
-    <form class="newsletter-form" onsubmit="handleSubmit(event)">
-      <input type="email" class="newsletter-input" placeholder="tu@email.com" required id="emailInput">
+    <form class="newsletter-form" action="https://formsubmit.co/PON_TU_EMAIL_AQUI" method="POST">
+      <input type="hidden" name="_subject" value="Nueva suscripción — FinanzasLibres España">
+      <input type="hidden" name="_autoresponse" value="¡Bienvenido/a a FinanzasLibres! Gracias por suscribirte. Pronto recibirás consejos exclusivos sobre finanzas, ahorro e inversión en España. Síguenos en TikTok @finanzaslibres1">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://calm-lamington-b22639.netlify.app/?gracias=1">
+      <input type="email" class="newsletter-input" name="email" placeholder="tu@email.com" required id="emailInput">
       <button type="submit" class="btn btn-primary" style="border-radius:100px;">Quiero aprender →</button>
     </form>
     <p id="success-msg" style="display:none;color:var(--verde);font-weight:700;margin-top:16px;">✅ ¡Genial! Revisa tu email para confirmar.</p>
@@ -1288,6 +1292,74 @@
 </section>
 
 <!-- FOOTER -->
+
+<!-- ═══ PLANILHAS / HOJAS DE CÁLCULO ═══════════════════ -->
+<div class="divider"></div>
+<section id="planilhas" style="padding:80px 20px;max-width:1100px;margin:0 auto;text-align:center;">
+  <p class="section-label reveal">Herramientas personalizadas</p>
+  <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-0.04em;margin:12px 0 16px;">📊 Hojas de cálculo para<br><span style="color:var(--verde)">gestionar tu dinero</span></h2>
+  <p class="section-sub reveal" style="max-width:580px;margin:0 auto 48px;">Creamos planilhas personalizadas para que tengas el control total de tus finanzas. Limpias, modernas y fáciles de usar.</p>
+  <div class="reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:48px;">
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;text-align:left;transition:all .35s cubic-bezier(.34,1.56,.64,1);" onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(0,200,150,.35)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
+      <div style="font-size:2rem;margin-bottom:12px;">💰</div>
+      <h4 style="font-weight:800;margin-bottom:6px;letter-spacing:-.02em;">Control de gastos</h4>
+      <p style="font-size:.85rem;color:var(--subtexto);line-height:1.6;">Registra ingresos y gastos mensuales. Categorías automáticas y gráficos visuales.</p>
+    </div>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;text-align:left;transition:all .35s cubic-bezier(.34,1.56,.64,1);" onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(0,200,150,.35)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
+      <div style="font-size:2rem;margin-bottom:12px;">📈</div>
+      <h4 style="font-weight:800;margin-bottom:6px;letter-spacing:-.02em;">Seguimiento inversiones</h4>
+      <p style="font-size:.85rem;color:var(--subtexto);line-height:1.6;">Portafolio de ETFs, acciones y cripto. Rentabilidad, dividendos y rebalanceo.</p>
+    </div>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;text-align:left;transition:all .35s cubic-bezier(.34,1.56,.64,1);" onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(0,200,150,.35)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
+      <div style="font-size:2rem;margin-bottom:12px;">🏠</div>
+      <h4 style="font-weight:800;margin-bottom:6px;letter-spacing:-.02em;">Calculadora hipoteca</h4>
+      <p style="font-size:.85rem;color:var(--subtexto);line-height:1.6;">Cuota mensual, amortización anticipada y comparativa fija vs variable.</p>
+    </div>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;text-align:left;transition:all .35s cubic-bezier(.34,1.56,.64,1);" onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(0,200,150,.35)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
+      <div style="font-size:2rem;margin-bottom:12px;">🎯</div>
+      <h4 style="font-weight:800;margin-bottom:6px;letter-spacing:-.02em;">Plan FIRE / Ahorro</h4>
+      <p style="font-size:.85rem;color:var(--subtexto);line-height:1.6;">Calcula cuándo podrás retirarte. Simulador de la regla del 4% y tu número FIRE.</p>
+    </div>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;text-align:left;transition:all .35s cubic-bezier(.34,1.56,.64,1);" onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(0,200,150,.35)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
+      <div style="font-size:2rem;margin-bottom:12px;">💳</div>
+      <h4 style="font-weight:800;margin-bottom:6px;letter-spacing:-.02em;">Gestión de deudas</h4>
+      <p style="font-size:.85rem;color:var(--subtexto);line-height:1.6;">Método avalanche y snowball. Fecha estimada de libertad financiera sin deudas.</p>
+    </div>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;text-align:left;transition:all .35s cubic-bezier(.34,1.56,.64,1);" onmouseover="this.style.transform='translateY(-8px)';this.style.borderColor='rgba(0,200,150,.35)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(255,255,255,.08)'">
+      <div style="font-size:2rem;margin-bottom:12px;">👨‍👩‍👧</div>
+      <h4 style="font-weight:800;margin-bottom:6px;letter-spacing:-.02em;">Presupuesto familiar</h4>
+      <p style="font-size:.85rem;color:var(--subtexto);line-height:1.6;">Regla 50/30/20 adaptada. Fondo de emergencia, ocio y metas de ahorro.</p>
+    </div>
+  </div>
+  <a href="https://wa.me/34613554689?text=Hola%2C+quiero+una+hoja+de+c%C3%A1lculo+personalizada" target="_blank" rel="noopener" class="btn btn-primary reveal" style="display:inline-flex;align-items:center;gap:10px;font-size:1.05rem;padding:16px 36px;">
+    📲 Solicitar mi planilla gratis
+  </a>
+</section>
+
+<!-- ═══ CONTACTO ════════════════════════════════════════ -->
+<div class="divider"></div>
+<section id="contacto" style="padding:80px 20px;max-width:700px;margin:0 auto;text-align:center;">
+  <p class="section-label reveal">Estamos aquí para ayudarte</p>
+  <h2 class="reveal" style="font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-0.04em;margin:12px 0 16px;">Contacta con<br><span style="color:var(--verde)">FinanzasLibres</span></h2>
+  <p class="section-sub reveal" style="max-width:480px;margin:0 auto 40px;">¿Dudas sobre finanzas, planillas o colaboraciones? Escríbenos directamente.</p>
+  <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:500px;margin:0 auto;">
+    <a href="https://wa.me/34613554689" target="_blank" rel="noopener"
+       style="background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);border-radius:20px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:all .35s cubic-bezier(.34,1.56,.64,1);text-decoration:none;"
+       onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 20px 48px rgba(37,211,102,.25)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <span style="font-size:2.2rem;">💬</span>
+      <span style="font-weight:800;font-size:1rem;letter-spacing:-.02em;">WhatsApp</span>
+      <span style="font-size:.85rem;color:rgba(37,211,102,.9);font-weight:600;">+34 613 554 689</span>
+    </a>
+    <a href="https://tiktok.com/@finanzaslibres1" target="_blank" rel="noopener"
+       style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:10px;transition:all .35s cubic-bezier(.34,1.56,.64,1);text-decoration:none;"
+       onmouseover="this.style.transform='translateY(-8px)';this.style.boxShadow='0 20px 48px rgba(255,255,255,.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <span style="font-size:2.2rem;">🎵</span>
+      <span style="font-weight:800;font-size:1rem;letter-spacing:-.02em;">TikTok</span>
+      <span style="font-size:.85rem;color:var(--subtexto);font-weight:600;">@finanzaslibres1</span>
+    </a>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
