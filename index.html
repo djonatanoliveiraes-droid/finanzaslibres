@@ -802,6 +802,80 @@
   ::selection { background:rgba(0,200,150,.3); color:#fff; }
   </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","url":"https://calm-lamington-b22639.netlify.app/","name":"FinanzasLibres España","description":"Aprende a ahorrar, invertir y ganar dinero en España","inLanguage":"es"},{"@type":"Organization","name":"FinanzasLibres España","url":"https://calm-lamington-b22639.netlify.app/","sameAs":["https://www.tiktok.com/@finanzaslibres1","https://www.instagram.com/finanzaslibres_es"],"contactPoint":{"@type":"ContactPoint","telephone":"+34613554689","contactType":"customer service"}},{"@type":"Service","name":"Hojas de cálculo financieras personalizadas","description":"Hojas de cálculo a medida para control de gastos, inversiones e hipotecas","areaServed":"ES"}]}</script>
+
+<style id="mouse-glow-style">
+/* ═══ MOUSE GLOW EFFECT ═══ */
+body::before {
+  content: '';
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,200,150,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: left 0.15s ease, top 0.15s ease;
+  left: var(--mx, 50%);
+  top: var(--my, 50%);
+}
+
+/* ═══ PROFESSIONAL REDESIGN ═══ */
+:root {
+  --font-main: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+body { font-family: var(--font-main); letter-spacing: -0.015em; }
+h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 800; letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem) !important; }
+
+/* Glass navbar */
+nav {
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  background: rgba(10,14,20,0.82) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Premium cards */
+.card, .aff-card {
+  background: rgba(255,255,255,0.025) !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 18px !important;
+  transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1) !important;
+  backdrop-filter: blur(8px);
+}
+.card:hover, .aff-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: rgba(0,200,150,0.35) !important;
+  box-shadow: 0 20px 60px rgba(0,200,150,0.08) !important;
+}
+
+/* Buttons */
+.btn, button[class*="btn"] {
+  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1) !important;
+}
+.btn:hover { transform: translateY(-4px) scale(1.02) !important; }
+
+/* Section labels */
+.section-label {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--verde) !important;
+  opacity: 0.9;
+}
+
+/* Dividers more subtle */
+.divider { opacity: 0.4 !important; }
+
+/* Planilhas paid badge pulse */
+@keyframes badgePulse {
+  0%,100% { box-shadow: 0 4px 24px rgba(255,77,0,.35); }
+  50% { box-shadow: 0 4px 40px rgba(255,77,0,.6), 0 0 0 8px rgba(255,77,0,.08); }
+}
+#planilhas > div:first-child { animation: badgePulse 2.5s ease-in-out infinite !important; }
+</style>
 </head>
 <body>
 
@@ -876,6 +950,34 @@
 </section>
 
 
+
+
+<!-- PLANILHAS DESTAQUE -->
+<section id="planilhas" style="padding:80px 20px;max-width:1100px;margin:0 auto;text-align:center;">
+  <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff4d00,#ff8c00);color:#fff;padding:10px 28px;border-radius:50px;font-weight:800;font-size:.95rem;margin-bottom:32px;box-shadow:0 4px 24px rgba(255,77,0,.35);" class="reveal">
+    💼 SERVICIO PROFESIONAL DE PAGO
+  </div>
+  <p class="section-label reveal">Herramientas personalizadas</p>
+  <h2 class="reveal">📊 Hojas de cálculo para <span style="color:var(--verde)">gestionar tu dinero</span></h2>
+  <p class="section-sub reveal">Creamos tu hoja de cálculo a medida. Precio por consulta — <strong style="color:var(--verde)">contacta por WhatsApp y te damos presupuesto en minutos.</strong></p>
+  <div style="background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,150,255,.08));border:2px solid var(--verde);border-radius:20px;padding:32px;max-width:600px;margin:0 auto 48px;display:flex;flex-direction:column;align-items:center;gap:16px;" class="reveal">
+    <div style="font-size:2rem;font-weight:900;color:#fff;">💬 Precio por consulta</div>
+    <p style="color:var(--subtexto);font-size:1rem;margin:0;">Cuéntanos qué necesitas y te preparamos una hoja personalizada. Rápido, profesional y económico.</p>
+    <a href="https://wa.me/34613554689?text=Hola%2C%20quiero%20una%20hoja%20de%20calculo%20personalizada" target="_blank" rel="noopener">
+      <button style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;border-radius:50px;padding:18px 44px;font-size:1.1rem;font-weight:800;cursor:pointer;box-shadow:0 6px 28px rgba(37,211,102,.4);">📲 Pedir presupuesto por WhatsApp</button>
+    </a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
+    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">📊</div><div class="aff-info"><h4>Control de gastos mensual</h4><p>Registra gastos, categorías y presupuesto. Ve al instante dónde va tu dinero.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
+    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">📈</div><div class="aff-info"><h4>Seguimiento de inversiones</h4><p>Controla fondos, ETFs y acciones en un solo lugar. Rentabilidad en tiempo real.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
+    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">🏠</div><div class="aff-info"><h4>Calculadora de hipoteca</h4><p>Compara ofertas, calcula cuotas y amortización anticipada. Decide mejor.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
+    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">🔥</div><div class="aff-info"><h4>Plan FIRE / Libertad financiera</h4><p>Calcula cuándo puedes jubilarte antes. Proyecciones personalizadas.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
+    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">💳</div><div class="aff-info"><h4>Gestión de deudas</h4><p>Método bola de nieve o avalancha. Sal de deudas con un plan claro.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
+    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">👨‍👩‍👧</div><div class="aff-info"><h4>Presupuesto familiar</h4><p>Planifica ingresos, gastos y ahorros de toda la familia. Metas compartidas.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
 <div class="divider"></div>
 
 <!-- CONSEJOS FINANCIEROS -->
@@ -1195,30 +1297,7 @@
 <!-- FOOTER -->
 
 <!-- ═══ PLANILHAS / HOJAS DE CÁLCULO ═══════════════════ -->
-<div class="divider"></div>
-<section id="planilhas" style="padding:80px 20px;max-width:1100px;margin:0 auto;text-align:center;">
-  <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#ff4d00,#ff8c00);color:#fff;padding:10px 28px;border-radius:50px;font-weight:800;font-size:.95rem;margin-bottom:32px;box-shadow:0 4px 24px rgba(255,77,0,.35);" class="reveal">
-    💼 SERVICIO PROFESIONAL DE PAGO
-  </div>
-  <p class="section-label reveal">Herramientas personalizadas</p>
-  <h2 class="reveal">📊 Hojas de cálculo para <span style="color:var(--verde)">gestionar tu dinero</span></h2>
-  <p class="section-sub reveal">Creamos tu hoja de cálculo a medida. Precio por consulta — <strong style="color:var(--verde)">contacta por WhatsApp y te damos presupuesto en minutos.</strong></p>
-  <div style="background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,150,255,.08));border:2px solid var(--verde);border-radius:20px;padding:32px;max-width:600px;margin:0 auto 48px;display:flex;flex-direction:column;align-items:center;gap:16px;" class="reveal">
-    <div style="font-size:2rem;font-weight:900;color:#fff;">💬 Precio por consulta</div>
-    <p style="color:var(--subtexto);font-size:1rem;margin:0;">Cuéntanos qué necesitas y te preparamos una hoja personalizada. Rápido, profesional y económico.</p>
-    <a href="https://wa.me/34613554689?text=Hola%2C%20quiero%20una%20hoja%20de%20calculo%20personalizada" target="_blank" rel="noopener">
-      <button style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;border:none;border-radius:50px;padding:18px 44px;font-size:1.1rem;font-weight:800;cursor:pointer;box-shadow:0 6px 28px rgba(37,211,102,.4);">📲 Pedir presupuesto por WhatsApp</button>
-    </a>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;">
-    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">📊</div><div class="aff-info"><h4>Control de gastos mensual</h4><p>Registra gastos, categorías y presupuesto. Ve al instante dónde va tu dinero.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
-    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">📈</div><div class="aff-info"><h4>Seguimiento de inversiones</h4><p>Controla fondos, ETFs y acciones en un solo lugar. Rentabilidad en tiempo real.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
-    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">🏠</div><div class="aff-info"><h4>Calculadora de hipoteca</h4><p>Compara ofertas, calcula cuotas y amortización anticipada. Decide mejor.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
-    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">🔥</div><div class="aff-info"><h4>Plan FIRE / Libertad financiera</h4><p>Calcula cuándo puedes jubilarte antes. Proyecciones personalizadas.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
-    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">💳</div><div class="aff-info"><h4>Gestión de deudas</h4><p>Método bola de nieve o avalancha. Sal de deudas con un plan claro.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
-    <div class="aff-card reveal" style="text-align:left;"><div class="aff-icon">👨‍👩‍👧</div><div class="aff-info"><h4>Presupuesto familiar</h4><p>Planifica ingresos, gastos y ahorros de toda la familia. Metas compartidas.</p></div><span class="aff-badge" style="background:rgba(255,77,0,.15);color:#ff6b35;">De pago</span></div>
-  </div>
-</section>
+
 
 <!-- ═══ CONTACTO ════════════════════════════════════════ -->
 <div class="divider"></div>
@@ -1507,5 +1586,11 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 </script>
 <a href="https://wa.me/34613554689?text=Hola%2C%20vengo%20de%20FinanzasLibres" target="_blank" rel="noopener" style="position:fixed;bottom:28px;right:28px;z-index:9999;background:#25D366;color:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 20px rgba(37,211,102,.5);text-decoration:none;" title="WhatsApp">💬</a>
 <div id="xpop" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:99999;align-items:center;justify-content:center;"><div style="background:#0d1117;border:1px solid rgba(0,200,150,.3);border-radius:24px;padding:48px 36px;max-width:460px;margin:20px;text-align:center;position:relative;"><button onclick="document.getElementById('xpop').style.display='none'" style="position:absolute;top:14px;right:18px;background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;">✕</button><div style="font-size:3rem;margin-bottom:12px;">💰</div><h3 style="font-size:1.4rem;font-weight:800;margin-bottom:10px;">¡Espera! Recibe consejos gratis</h3><p style="color:#8b949e;margin-bottom:20px;">Suscríbete y recibe los mejores trucos de ahorro e inversión en España.</p><form action="https://formsubmit.co/b4h4mbwfdb@privaterelay.appleid.com" method="POST" style="display:flex;flex-direction:column;gap:10px;"><input type="hidden" name="_subject" value="Suscripción popup — FinanzasLibres"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://calm-lamington-b22639.netlify.app/?gracias=1"><input type="email" name="email" placeholder="tu@email.com" required style="padding:13px 18px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:#fff;font-size:.95rem;"><button type="submit" style="background:linear-gradient(135deg,#00c896,#00a876);color:#fff;border:none;border-radius:10px;padding:14px;font-size:.95rem;font-weight:700;cursor:pointer;">✅ Suscribirme gratis</button></form><p style="font-size:.72rem;color:#555;margin-top:10px;">Sin spam. Cancela cuando quieras.</p></div></div><script>(function(){let shown=false;document.addEventListener('mouseleave',function(e){if(e.clientY<10&&!shown&&!sessionStorage.getItem('xs')){shown=true;sessionStorage.setItem('xs','1');document.getElementById('xpop').style.display='flex';}});})();</script>
+<script>
+document.addEventListener('mousemove', function(e) {
+  document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+  document.documentElement.style.setProperty('--my', e.clientY + 'px');
+});
+</script>
 </body>
 </html>
