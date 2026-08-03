@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinanzasLibres · Links</title>
+<meta name="description" content="Todos los recursos de FinanzasLibres España — afiliados, libros y comunidad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090B;
+  --bg2:#0E0E10;
+  --gold:#C9A84C;
+  --gold2:rgba(201,168,76,0.15);
+  --goldb:rgba(201,168,76,0.25);
+  --white:#F5F3EE;
+  --gray:#7A776F;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--white);
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:48px 20px 60px;
+  position:relative;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse 120% 60% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 80% at 80% 100%, rgba(201,168,76,0.03) 0%, transparent 50%);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* ── CONTAINER ── */
+.wrap{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:420px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0;
+}
+
+/* ── AVATAR ── */
+.avatar{
+  width:88px;
+  height:88px;
+  border-radius:50%;
+  background:var(--bg2);
+  border:1.5px solid var(--goldb);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:var(--serif);
+  font-size:32px;
+  font-weight:300;
+  color:var(--gold);
+  letter-spacing:0.05em;
+  margin-bottom:16px;
+  position:relative;
+  overflow:hidden;
+}
+.avatar::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:radial-gradient(ellipse at 30% 30%, rgba(201,168,76,0.12), transparent 60%);
+}
+
+/* ── HEADER ── */
+.brand{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:300;
+  letter-spacing:0.06em;
+  color:var(--white);
+  margin-bottom:4px;
+}
+.brand span{color:var(--gold)}
+.handle{
+  font-size:11px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--gray);
+  margin-bottom:8px;
+}
+.bio-text{
+  font-size:13px;
+  color:var(--gray);
+  text-align:center;
+  line-height:1.65;
+  max-width:300px;
+  font-weight:300;
+  margin-bottom:32px;
+}
+.bio-text strong{color:var(--white);font-weight:400;}
+
+/* ── SECTION LABEL ── */
+.section-label{
+  font-size:9px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:rgba(201,168,76,0.5);
+  align-self:flex-start;
+  margin-bottom:10px;
+  margin-top:24px;
+  padding-left:2px;
+}
+
+/* ── LINK BUTTON ── */
+.link-btn{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:16px 20px;
+  background:var(--bg2);
+  border:1px solid rgba(201,168,76,0.12);
+  color:var(--white);
+  text-decoration:none;
+  margin-bottom:10px;
+  transition:border-color 0.25s, background 0.25s, transform 0.2s;
+  position:relative;
+  overflow:hidden;
+}
+.link-btn::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, var(--gold2), transparent);
+  opacity:0;
+  transition:opacity 0.25s;
+}
+.link-btn:hover{
+  border-color:var(--goldb);
+  transform:translateY(-1px);
+}
+.link-btn:hover::before{opacity:1}
+.link-btn:active{transform:translateY(0)}
+
+.link-icon{
+  font-size:20px;
+  min-width:28px;
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+.link-content{
+  flex:1;
+  position:relative;
+  z-index:1;
+}
+.link-title{
+  font-size:14px;
+  font-weight:500;
+  color:var(--white);
+  line-height:1.2;
+  margin-bottom:2px;
+}
+.link-sub{
+  font-size:11px;
+  color:var(--gray);
+  font-weight:300;
+}
+.link-arrow{
+  font-size:12px;
+  color:var(--gold);
+  opacity:0.7;
+  position:relative;
+  z-index:1;
+}
+.badge{
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  background:var(--gold2);
+  border:1px solid var(--goldb);
+  padding:2px 8px;
+  position:relative;
+  z-index:1;
+}
+
+/* ── HIGHLIGHT (featured link) ── */
+.link-btn.featured{
+  border-color:rgba(201,168,76,0.35);
+  background:rgba(201,168,76,0.06);
+}
+.link-btn.featured .link-title{color:var(--gold)}
+
+/* ── SOCIALS ROW ── */
+.socials{
+  display:flex;
+  gap:12px;
+  width:100%;
+  margin-top:24px;
+}
+.social-pill{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:13px 10px;
+  background:var(--bg2);
+  border:1px solid rgba(201,168,76,0.12);
+  color:var(--gray);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  transition:border-color 0.2s, color 0.2s;
+}
+.social-pill:hover{border-color:var(--goldb);color:var(--gold)}
+
+/* ── DIVIDER ── */
+.divider{
+  width:100%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,168,76,0.2),transparent);
+  margin:28px 0 4px;
+}
+
+/* ── FOOTER ── */
+.footer{
+  margin-top:40px;
+  text-align:center;
+}
+.footer p{
+  font-size:10px;
+  color:rgba(122,119,111,0.5);
+  letter-spacing:0.12em;
+  line-height:1.8;
+}
+.footer a{color:rgba(201,168,76,0.4);text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- AVATAR -->
+  <div class="avatar">FL</div>
+
+  <!-- HEADER -->
+  <div class="brand">Finanzas<span>Libres</span></div>
+  <div class="handle">@finanzaslibres_es</div>
+  <p class="bio-text">
+    Ahorra más, invierte mejor y vive libre.<br>
+    <strong>Finanzas personales reales para España.</strong>
+  </p>
+
+  <!-- SITIO WEB -->
+  <p class="section-label">Sitio web</p>
+  <a href="https://djonatanoliveiraes-droid.github.io/finanzaslibres/" target="_blank" class="link-btn featured">
+    <span class="link-icon">🌐</span>
+    <div class="link-content">
+      <div class="link-title">FinanzasLibres.es</div>
+      <div class="link-sub">Plan 30 días · Afiliados · Libros</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <!-- AFILIADOS TOP -->
+  <p class="section-label">Abre cuenta · gratis</p>
+
+  <a href="https://www.traderepublic.com/es-es" target="_blank" class="link-btn">
+    <span class="link-icon">📈</span>
+    <div class="link-content">
+      <div class="link-title">Trade Republic</div>
+      <div class="link-sub">Broker nº1 · ETFs sin comisión</div>
+    </div>
+    <span class="badge">Hasta 200€</span>
+  </a>
+
+  <a href="https://www.revolut.com/es-ES/" target="_blank" class="link-btn">
+    <span class="link-icon">💳</span>
+    <div class="link-content">
+      <div class="link-title">Revolut</div>
+      <div class="link-sub">Neobank · Sin comisiones globales</div>
+    </div>
+    <span class="badge">50€ bono</span>
+  </a>
+
+  <a href="https://indexacapital.com/es/i/YD62RMI5" target="_blank" class="link-btn">
+    <span class="link-icon">🤖</span>
+    <div class="link-content">
+      <div class="link-title">Indexa Capital</div>
+      <div class="link-sub">Roboadvisor nº1 en España</div>
+    </div>
+    <span class="badge">Sin comisión</span>
+  </a>
+
+  <a href="https://www.degiro.es/" target="_blank" class="link-btn">
+    <span class="link-icon">📊</span>
+    <div class="link-content">
+      <div class="link-title">DEGIRO</div>
+      <div class="link-sub">Broker europeo · Comisiones bajas</div>
+    </div>
+    <span class="badge">Hasta 100€</span>
+  </a>
+
+  <a href="https://raisin.es/" target="_blank" class="link-btn">
+    <span class="link-icon">🏦</span>
+    <div class="link-content">
+      <div class="link-title">Raisin · Cuenta Remunerada</div>
+      <div class="link-sub">Hasta 3,5% TAE · Sin riesgo</div>
+    </div>
+    <span class="badge">30€ bono</span>
+  </a>
+
+  <!-- LIBROS -->
+  <p class="section-label">Libros recomendados</p>
+
+  <a href="https://www.amazon.es/s?k=padre+rico+padre+pobre&tag=finanzaslibre-21" target="_blank" class="link-btn">
+    <span class="link-icon">📚</span>
+    <div class="link-content">
+      <div class="link-title">Padre Rico, Padre Pobre</div>
+      <div class="link-sub">Kiyosaki · El más vendido del mundo</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="https://www.amazon.es/s?k=psicologia+del+dinero+morgan+housel&tag=finanzaslibre-21" target="_blank" class="link-btn">
+    <span class="link-icon">📚</span>
+    <div class="link-content">
+      <div class="link-title">Psicología del Dinero</div>
+      <div class="link-sub">Morgan Housel · Tendencia 2024–2026</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="https://www.amazon.es/s?k=libros+finanzas+personales+inversion&tag=finanzaslibre-21" target="_blank" class="link-btn">
+    <span class="link-icon">📦</span>
+    <div class="link-content">
+      <div class="link-title">Ver todos los libros</div>
+      <div class="link-sub">Amazon España · Tag afiliado activo</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <div class="divider"></div>
+
+  <!-- REDES SOCIALES -->
+  <div class="socials">
+    <a href="https://www.tiktok.com/@finanzaslibres" target="_blank" class="social-pill">
+      🎵 TikTok
+    </a>
+    <a href="https://www.instagram.com/finanzaslibres_es" target="_blank" class="social-pill">
+      📸 Instagram
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>
+      © 2026 FinanzasLibres España<br>
+      <a href="https://djonatanoliveiraes-droid.github.io/finanzaslibres/">finanzaslibres.github.io</a><br>
+      Contenido informativo · No asesoramiento financiero
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
